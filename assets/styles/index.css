@@ -1,0 +1,235 @@
+/*global variables*/
+:root {
+    --purple: hsl(259, 100%, 65%);
+    --light-red: hsl(0, 100%, 67%);
+    --white: hsl(0, 0%, 100%); 
+    --off-white: hsl(0, 0%, 94%);
+    --light-grey: hsl(0, 0%, 86%);
+    --smokey-grey: hsl(0, 1%, 44%);
+    --off-black: hsl(0, 0%, 8%);
+}
+
+/*reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh; 
+    background-color: var(--off-white); 
+    display: flex; 
+    flex-direction: column; 
+    font-weight: 700; 
+    font-family: 'Poppins', sans-serif; 
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+button {
+    background-color: var(--purple);
+    color: var(--white);     
+    cursor: pointer;
+}
+
+button, input {
+    border: none; 
+    outline: none; 
+}
+
+
+/*container*/
+.container {
+    margin-top: 1rem;
+    background-color: var(--white); 
+    padding: 2rem;
+    width: 70vw;
+    max-width: 650px;
+    border-radius: 20px 20px 100px 20px;
+    display: flex;
+    flex-direction: column; 
+    box-shadow: 0 0 4px 5px var(--off-white);
+}
+
+/*form*/
+.form-date .form-groups{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.form-date .form-groups .form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    color: var(--smokey-grey);
+    gap: 0.2rem;
+}
+
+.form-date .form-groups .form-group label{
+    font-size: 0.8rem;     
+    width: auto;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.form-date .form-groups .form-group input{
+    font-size: 2rem;
+    width: 140px;
+    border-radius: 5px; 
+    border: 1px solid var(--light-grey);
+    padding: .5rem;
+    font-weight: 700;
+    color: var(--off-black);
+}
+
+.form-date .form-groups .form-group input::placeholder {
+    color: var(--smokey-grey); 
+    font-weight: 700;
+}
+
+.form-date .form-groups .form-group .error-message{ 
+    font-style: italic;
+    font-weight: 400;
+    color: var(--light-red); 
+    font-size: 0.7rem; 
+    width: auto;
+    display: none;
+}
+
+.form-date .form-groups .form-group.error label {
+    color: var(--light-red);
+}
+
+.form-date .form-groups .form-group.error > input { 
+    border: 1px solid var(--light-red); 
+}
+
+.form-date .form-groups .form-group.error > .error-message {
+    display: inline;
+}
+
+.form-date .submit{
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.form-date .submit .line{
+    width: 100%; 
+    height: 1px;
+    border: 0; 
+    border: 1px solid var(--off-white);
+    z-index: 1;
+}
+
+.form-date .submit #btn-submit{
+    position: absolute;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+    z-index: 2;
+    transition: all 0.2s ease;
+}
+
+.form-date .submit #btn-submit:hover {
+    opacity: 0.8;
+}
+
+.form-date .submit #btn-submit img {
+    max-width: 50%;
+    height: auto;
+}
+
+
+/*display*/
+.display {
+    display: flex;
+    flex-direction: column;
+}
+
+.display .time {
+    font-weight: 800; 
+    font-style: italic;
+    font-size: 3.5rem; 
+    color: var(--off-black); 
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.display .time .dash {
+    color: var(--purple);   
+    letter-spacing: 10px;  
+}
+
+
+/*attribution*/
+.attribution { 
+    font-size: 0.7rem; 
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.attribution a { 
+    text-decoration: none;
+    color: var(--purple); 
+}
+
+
+@media screen and (max-width: 768px) {
+    .form-date .form-groups .form-group input{
+        font-size: 1.1rem;
+        width: auto;
+        border-radius: 5px; 
+        padding: 0.5rem;
+    }
+
+    .form-date .submit #btn-submit{ 
+        width: 60px;
+        height: 60px;
+    }
+
+    .display .time { 
+        font-size: 2rem;
+    } 
+}
+
+
+@media screen and (max-width: 576px)  {
+    .container { 
+        gap: 2rem;
+    }
+
+    .form-date .form-groups .form-group{ 
+        width: 100%;
+    }
+
+    .form-date .form-groups .form-group input{ 
+        width: 100%;
+        font-size: 1rem;
+    } 
+
+    .form-date .submit #btn-submit{ 
+        right: calc(50% - 1.5rem);
+        width: 50px;
+        height: 50px;
+    }
+
+    .display .time { 
+        font-size: 1rem;
+    } 
+}
+
